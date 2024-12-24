@@ -161,6 +161,21 @@
       </inertial>
   </link>
 
+  <joint name="base_link_joint_2" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="chassis_external_collision_link" />
+  </joint>
+
+  <link name="chassis_external_collision_link">
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://dingo_description/meshes/diff_chassis_collision.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
   <link name="imu_link">
     <inertial>
       <mass value="0.001"/>
